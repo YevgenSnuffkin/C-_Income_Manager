@@ -5,12 +5,16 @@
         xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         xmlns:pie="clr-namespace:PieControls;assembly=PieControls"
-        Title="Diagrama_Wydatkow" Height="280.597" Width="408.956">
+        Title="Diagrama_Wydatkow" Height="329.851" Width="407.463" Background="#FF75A69B">
     <Grid HorizontalAlignment="Left" Height="262" VerticalAlignment="Top" Width="456">
-       
-        <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="wydatkiChart"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
+
+        <DVC:Chart Name="wydatkiChart"
            Width="400" Height="250"
-           Background="#FF75A69B" Margin="0,0,56,12">
+           Background="#FF75A69B" Margin="0,0,56,12" Grid.ColumnSpan="2">
             <DVC:Chart.Series>
                 <DVC:BarSeries Title="Wydatki"
             IndependentValueBinding="{Binding Path=Key}"
@@ -18,5 +22,7 @@
                 </DVC:BarSeries>
             </DVC:Chart.Series>
         </DVC:Chart>
+        <Button Content="Refresh" HorizontalAlignment="Left" Height="22" Margin="21,268,0,-28" VerticalAlignment="Top" Width="108" Click="Button_Click"/>
+        <Button Grid.ColumnSpan="2" Content="ERASE DATA" HorizontalAlignment="Left" Height="22" Margin="192,268,0,-28" VerticalAlignment="Top" Width="100" Click="Button_Click_2" Background="#FFD35656"/>
     </Grid>
 </Window>

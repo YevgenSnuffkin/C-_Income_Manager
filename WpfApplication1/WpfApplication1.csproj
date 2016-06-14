@@ -52,6 +52,9 @@
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -135,6 +138,7 @@
     <Compile Include="Window3.xaml.cs">
       <DependentUpon>Window3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="XMLexport.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -191,6 +195,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="Income_ManagerDataSet.xsc">
       <DependentUpon>Income_ManagerDataSet.xsd</DependentUpon>
     </None>

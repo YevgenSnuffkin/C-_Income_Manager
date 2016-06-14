@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
+
 
 namespace WpfApplication1
 {
@@ -22,19 +24,32 @@ namespace WpfApplication1
     {
         public MainWindow()
         {
+            
             InitializeComponent();
-            myDesktop win1 = new myDesktop();
-            win1.Show();
-            Close();
+
+            
+
+            
            
         }
+           
+        private void Awaiter(Int32 timin){
 
+            
         
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
 
+            myDesktop win1 = new myDesktop();
+
+            win1.Show();
+
+           
+
+            this.Close();
+            
         }        
     } 
 }

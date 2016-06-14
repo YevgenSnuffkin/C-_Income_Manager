@@ -22,57 +22,70 @@ namespace WpfApplication1
     /// </summary>
     public partial class DiagramWindow : Window
     {
-        public int sumOfRent;
-        public int sumOfFood;
-        public int sumOfClothes;
-        public int sumOfIncome;
+        
 
         public DiagramWindow()
         {
             InitializeComponent();
+            
+                     
             LoadBarChartData();
         }
         private void LoadBarChartData()
         {
             Income_ManagerEntities context = new Income_ManagerEntities();
+            if (context.Table_user.Count() == 0)
+            {
+                MessageBox.Show("no data!");
+            }
             var usersadd = context.Table_user;
+
             var users = context.Table_user.ToArray();
-            /*var t = new Table_user 
-            {
-                username = "new1",
-                rent= 10,
-                food=  20,
-                clothes = 30,
-                income =100
-            };
 
-            usersadd.Add(t);
-            try
-            {
-                context.SaveChanges(); 
-            }
-            catch (DbEntityValidationException e)
-            {
-                var errors = e.EntityValidationErrors;
-
-            }*/
+            int sumOfRent =
+                Convert.ToInt32(context.Table_user.Sum(user => user.rent));
+            int sumOfFood=
+                Convert.ToInt32(context.Table_user.Sum(user => user.food));
+            int sumOfClothes=
+                Convert.ToInt32(context.Table_user.Sum(user => user.clothes)); 
+            int sumOfIncome=
+                Convert.ToInt32(context.Table_user.Sum(user => user.income)); 
             
-            foreach (var user in users)
-            {
-
-                sumOfRent = sumOfRent +  Convert.ToInt32(user.rent);
-                sumOfFood = sumOfFood + Convert.ToInt32(user.food);
-                sumOfClothes = sumOfClothes + Convert.ToInt32(user.clothes);
-                sumOfIncome = sumOfIncome + Convert.ToInt32(user.income);
-            }
-            
-            ((BarSeries)wydatkiChart.Series[0]).ItemsSource =
-              new KeyValuePair<string, int>[]{
-            new KeyValuePair<string, int>("rent", sumOfRent),
-            new KeyValuePair<string, int>("food", sumOfFood),
-            new KeyValuePair<string, int>("clothes", sumOfClothes),
-            new KeyValuePair<string, int>("income", sumOfIncome)};
            
+            
+            ((BarSeries)wydatkiChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[]{
+
+                new KeyValuePair<string, int>("rent", sumOfRent),
+
+                new KeyValuePair<string, int>("food", sumOfFood),
+
+                new KeyValuePair<string, int>("clothes", sumOfClothes),
+
+                new KeyValuePair<string, int>("income", sumOfIncome)};
+
+            XMLexport expo = new XMLexport();
+
+            expo.createXML(sumOfRent,sumOfFood,sumOfClothes,sumOfIncome);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            LoadBarChartData();
+
+             
+        }
+
+       
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            using (var context = new Income_ManagerEntities())
+            {
+                var rowClean = context.Database.ExecuteSqlCommand("TRUNCATE TABLE [Table_user]");
+                //rowClean.All<>;
+            }   
+
         }
     }
 }

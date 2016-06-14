@@ -20,7 +20,11 @@ namespace WpfApplication1
     /// </summary>
     public partial class myDesktop : Window
     {
-              
+
+        DiagramWindow win1 = new DiagramWindow();
+
+        Window3 wincalc = new Window3();
+
         public myDesktop()
         {
 
@@ -46,21 +50,25 @@ namespace WpfApplication1
             win1.Show();         
 
 
-            //should open diagram
+                                    //should open diagram
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Window3 wincalc = new Window3();
 
-            wincalc.Show(); //income and costs
+            wincalc.Show();       //income and costs
 
             
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            this.Close();//exit
+
+            this.Close();        //exit
+            wincalc.Close();
+            win1.Close();
+              
         }
        
     }
