@@ -1,19 +1,17 @@
 ﻿<Window x:Class="WpfApplication1.Window3"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Window3" Height="300" Width="300">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="72,208,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox Name="tbox1" HorizontalAlignment="Left" Height="23" Margin="54,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged">
-            <TextBox.BindingGroup>
-                <BindingGroup/>
-            </TextBox.BindingGroup>
-        </TextBox>
-        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="72,138,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="72,158,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="72,178,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl1" Content="Label" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="143" Height="33"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="54,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.508,0.391"/>
+        Title="Desktop" Height="253" Width="300" Background="White" Foreground="White">
+    <Grid Background="#FF75A69B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="53*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="0,101,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" FontFamily="Trebuchet MS" Grid.Column="1"/>
+        <TextBox x:Name="tboxRent" HorizontalAlignment="Left" Height="23" Margin="27,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Rent" GotFocus="TextBox_GotFocus"/>
+        <TextBox x:Name="tboxFood" HorizontalAlignment="Left" Height="23" Margin="27,76,0,0" TextWrapping="Wrap" Text="Food" VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus"/>
+        <TextBox x:Name="tboxClothes" HorizontalAlignment="Left" Height="23" Margin="27,114,0,0" TextWrapping="Wrap" Text="Clothes" VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus"/>
+        <TextBox x:Name="tboxIncome" HorizontalAlignment="Left" Height="23" Margin="27,154,0,0" TextWrapping="Wrap" Text="Income" VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus"/>
 
     </Grid>
 </Window>

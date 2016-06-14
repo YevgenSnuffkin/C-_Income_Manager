@@ -53,14 +53,14 @@ namespace WpfApplication1
         {
             Window3 wincalc = new Window3();
 
-            wincalc.Show();
+            wincalc.Show(); //income and costs
 
-            //income and costs
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //exit
+            this.Close();//exit
         }
        
     }

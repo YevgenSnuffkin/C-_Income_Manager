@@ -23,19 +23,20 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            
             myDesktop win1 = new myDesktop();
-            win1.Show();         
-
+            win1.Show();
+            Close();
+           
         }
 
         
-    }
-   
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+        }        
+    } 
 }
 
 

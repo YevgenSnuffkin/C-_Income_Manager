@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using System.Data.Entity.Validation;
 
 namespace WpfApplication1
 {
@@ -24,32 +25,46 @@ namespace WpfApplication1
         public Window3()
         {
             InitializeComponent();
-            tbox1.Clear();
+            
         }
-        
-
+      
         private void Button_Click(object sender, RoutedEventArgs e)
             {
-            
-           ;
-            
-            Income_ManagerEntities context = new Income_ManagerEntities();
-            var users = context.Table_user.ToArray();
-            foreach (var user in users)
-            {  
-                 wholePay = wholePay + user.rent.ToString();
-
-            }
-            lbl1.Content = wholePay;
+                //tboxRent.Text = "";
+                Income_ManagerEntities context = new Income_ManagerEntities();
+                var usersadd = context.Table_user;
+                var users = context.Table_user.ToArray();
+                var t = new Table_user
+                {
+                    username = "new1",
+                    rent = decimal.Parse(tboxRent.Text),
+                    food = decimal.Parse(tboxFood.Text),
+                    clothes = decimal.Parse(tboxClothes.Text),
+                    income = decimal.Parse(tboxIncome.Text)
+                };
+                usersadd.Add(t);
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException b)
+                {
+                    var errors = b.EntityValidationErrors;
+                }
             
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
+        { 
             
         }
 
-      
-          
+        public void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+           
+            TextBox txtBox = sender as TextBox;
+            txtBox.Text = string.Empty;
+            
+        }
     }
 }

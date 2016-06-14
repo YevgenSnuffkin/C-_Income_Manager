@@ -38,3 +38,4 @@ C:\Users\Yevgen\documents\visual studio 2013\Projects\WpfApplication1\WpfApplica
 C:\Users\Yevgen\documents\visual studio 2013\Projects\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
 C:\Users\Yevgen\documents\visual studio 2013\Projects\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
 C:\Users\Yevgen\documents\visual studio 2013\Projects\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb
+C:\Users\Yevgen\documents\visual studio 2013\Projects\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csprojResolveAssemblyReference.cache
