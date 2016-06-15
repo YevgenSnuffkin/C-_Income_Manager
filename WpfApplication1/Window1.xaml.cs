@@ -38,6 +38,11 @@ namespace WpfApplication1
         }
 
         //window itself contains info about author and last change to income
+        /// <summary>
+        /// tymi metodami pokazujemy nowe okna
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Income_ManagerEntities context = new Income_ManagerEntities();

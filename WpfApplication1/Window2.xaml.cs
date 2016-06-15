@@ -66,8 +66,14 @@ namespace WpfApplication1
             XMLexport expo = new XMLexport();
 
             expo.createXML(sumOfRent,sumOfFood,sumOfClothes,sumOfIncome);
+            
         }
 
+        /// <summary>
+        /// Button click listener
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
