@@ -195,7 +195,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.manifest" />
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Income_ManagerDataSet.xsc">
       <DependentUpon>Income_ManagerDataSet.xsd</DependentUpon>
     </None>
